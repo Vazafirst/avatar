@@ -1,23 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree&family=Lato:wght@100;300&family=Roboto&display=swap');
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+:root {
+    --deep-ocean: #020b16;
+    --pandora-cyan: #00e5ff;
+    --biolume-green: #39ff14;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-light: #f0f0f0;
 }
 
 body {
-  min-height: 100vh;
-  width: 100vw;
-  margin: 0;
-  background-color: #007c99;
-  color: #e4f1f5;
-  font-family: "Lato", sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--deep-ocean);
+    color: var(--text-light);
+    overflow-x: hidden;
 }
 
-h1, h2, h3 {
-    font-family: "Figtree", sans-serif;
-    letter-spacing: 2px;
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 20px;
+}
+
+@keyframes biolume-pulse {
+    0% { box-shadow: 0 0 5px var(--pandora-cyan); }
+    50% { box-shadow: 0 0 20px var(--pandora-cyan), 0 0 30px var(--biolume-green); }
+    100% { box-shadow: 0 0 5px var(--pandora-cyan); }
+}
+
+.glow-text {
+    color: var(--pandora-cyan);
+    text-shadow: 0 0 10px var(--pandora-cyan);
+    animation: biolume-pulse 3s infinite ease-in-out;
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: brightness(0.4);
 }

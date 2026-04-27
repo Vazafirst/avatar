@@ -1,4 +1,3 @@
-/* Layout do Card Principal */
 .main-card {
     display: flex;
     gap: 40px;
@@ -7,14 +6,40 @@
     padding: 40px;
     align-items: flex-start;
     animation: fadeIn 1.5s ease-out;
+    position: relative;
 }
 
-/* Efeito no Poster */
+#myVideo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    object-fit: cover;
+    opacity: 0.5;
+    filter: blur(5px);
+}
+
+#movie-title{
+    color: var(--pandora-cyan);
+}
+
+#movie-logo{
+    width: 150px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 .poster-wrapper img {
     width: 300px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     border: 1px solid var(--glass-border);
+    cursor: pointer;
 }
 
 .biolume-border {
@@ -26,7 +51,89 @@
     transform: scale(1.02);
 }
 
-/* Tipografia e Meta-dados */
+.poster-expanded{
+    width: 80vw;
+    height: 90vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 3%;
+    overflow: hidden;
+    display: none;
+}
+
+.poster-expanded:hover{
+    box-shadow: 0 0 30px var(--pandora-cyan);
+}
+
+.poster-expanded #close-expanded{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#close-expanded:hover{
+    transform: scale(1.05);
+    font-size: 2.2rem;
+}
+
+#close-expanded:active{
+    background-color: red;
+    color: black;
+    transform: scale(0.9);
+    transition: 0.2s;
+}
+
+.poster-expanded #download-poster{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    color: var(--pandora-cyan);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#download-poster:hover{
+    color: var(--biolume-green);
+}
+
+#download-poster:active{
+    color: var(--pandora-cyan);
+    transform: scale(0.9);
+    transition: 0.2s;
+}
+
+.poster-expanded #movie-poster-expanded{
+    width: 30%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    object-fit: contain;
+    border-radius: 3%;
+}
+
+.poster-expanded #movie-poster-expanded:hover{
+    border: none;
+    box-shadow: none;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
 .movie-info h1 {
     font-size: 3rem;
     margin-bottom: 10px;
@@ -47,7 +154,6 @@
     border-radius: 4px;
 }
 
-/* Botão de Trailer Estilo Pandora */
 .btn-glow {
     background: transparent;
     border: 2px solid var(--pandora-cyan);
@@ -70,7 +176,6 @@
     box-shadow: 0 0 20px var(--pandora-cyan);
 }
 
-/* Sinopse e Crew */
 .synopsis-container h3 {
     margin-bottom: 10px;
     color: var(--pandora-cyan);
@@ -93,7 +198,6 @@
     color: #b0d4db;
 }
 
-/* Responsividade Básica */
 @media (max-width: 768px) {
     .main-card {
         flex-direction: column;

@@ -1,46 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore Pandora: Sinopse, elenco e detalhes de Avatar: O Caminho da Água.">
-  <title>Bem vindo a Pandora</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/index.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore Pandora: Sinopse, elenco e detalhes de Avatar: O Caminho da Água."
+    />
+    <title>Bem vindo a Pandora</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
   <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="assets/vids/bgvidreduced.mp4" type="video/mp4" />
+    </video>
     <header></header>
     <main class="container">
-    <section id="movie-hero" class="glass-card main-card">
+      <section id="movie-hero" class="glass-card main-card">
         <div class="poster-wrapper">
-            <img id="movie-poster" src="" alt="Poster do Filme" class="biolume-border">
+          <img
+            id="movie-poster"
+            src=""
+            alt="Poster do Filme"
+            class="biolume-border"
+          />
+        </div>
+
+        <div class="poster-expanded">
+          <button id="close-expanded" class="btn-glow">X</button>
+          <button id="download-poster" class="btn-glow">Baixar Poster</button>
+          <img
+            id="movie-poster-expanded"
+            src="assets/img/poster.avif"
+            alt="Poster do Filme"
+            class="biolume-border"
+          />
         </div>
 
         <div class="movie-info">
-            <h1 id="movie-title" class="glow-text">Avatar: O Caminho da Água</h1>
-            
-            <div class="metadata">
-                <span id="age-rating" class="badge">12</span>
-                <span id="release-date">15/12/2022 (BR)</span>
-                <span id="genres">• Ficção Científica, Ação</span>
-                <span id="runtime">• 3h 12m</span>
-            </div>
+          <h1 id="movie-title">Avatar: O Caminho da Água</h1>
+          <img
+            id="movie-logo"
+            src="assets/img/logo.svg"
+            alt="Pandora"
+            class="logo"
+          />
+          <div class="metadata">
+            <span id="age-rating" class="badge">12</span>
+            <span id="release-date"></span>
+            <span id="genres">• Ficção Científica, Ação</span>
+            <span id="runtime">• 3h 12m</span>
+          </div>
 
-            <div class="actions">
-                <button id="play-trailer" class="btn-glow">
-                    <span class="icon">▶</span> Assistir Trailer
-                </button>
-            </div>
+          <div class="actions">
+            <button id="play-trailer" class="btn-glow">
+              <span class="icon">▶</span> Assistir Trailer
+            </button>
+          </div>
 
-            <div class="synopsis-container">
-                <h3>Sinopse</h3>
-                <p id="movie-overview">A carregar a jornada de Jake Sully...</p>
-            </div>
+          <div class="synopsis-container">
+            <h3>Sinopse</h3>
+            <p id="movie-overview">A carregar a jornada de Jake Sully...</p>
+          </div>
 
-            <div class="crew-grid" id="main-crew">
-            </div>
+          <div class="crew-grid" id="main-crew"></div>
         </div>
-    </section>
-</main>
+      </section>
+    </main>
+    <script type="module" src="/js/tmdb/api.js"></script>
   </body>
 </html>
