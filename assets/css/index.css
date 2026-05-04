@@ -198,6 +198,44 @@
     color: #b0d4db;
 }
 
+#casting{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    height: 280px;
+    gap: 15px;
+}
+
+.cast-list {
+    width: 150px;
+    height: 220px;
+    text-align: center;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.cast-list img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+    filter: grayscale(30%);
+    border: 0px solid var(--pandora-cyan);
+    box-shadow: 0 0 0px var(--pandora-cyan);
+}
+
+.cast-list img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    filter: grayscale(0%);
+    border: 1px solid var(--pandora-cyan);
+    box-shadow: 0 0 10px var(--pandora-cyan);
+}
+
 @media (max-width: 768px) {
     .main-card {
         flex-direction: column;

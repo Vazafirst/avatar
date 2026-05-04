@@ -34,19 +34,18 @@ const dataFormatada = `${dia}/${mes}/${ano}`;
 document.getElementById("release-date").innerText = `Lançamento: ${dataFormatada} (BR)`;
   // document.getElementById('rating').innerText = `⭐ ${movie.vote_average.toFixed(1)}`;
 
-  /* const castGrid = document.getElementById('main-crew');
+  const castGrid = document.getElementById('casting');
     // Pegamos apenas os 4 primeiros atores para o exemplo
-    movie.credits.cast.slice(0, 4).forEach(actor => {
+    movie.credits.cast.slice(0, 20).forEach(actor => {
         const actorDiv = document.createElement('div');
-        actorDiv.className = 'actor-card';
+        actorDiv.className = 'cast-list';
         actorDiv.innerHTML = `
-            <img src="${IMG_URL + actor.profile_path}" alt="${actor.name}" style="width:100px; border-radius:50%">
+            <img src="${IMG_URL + actor.profile_path}" alt="${actor.name}">
             <p><strong>${actor.name}</strong></p>
-            <p><small>${actor.character}</small></p>
+            <p><small>como ${actor.character}</small></p>
         `;
         castGrid.appendChild(actorDiv);
-    }); */
+    });
 }
 
-// Iniciar a busca
 getMovieData();
