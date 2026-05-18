@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="assets/css/index.css" />
   </head>
   <body>
-    <video autoplay muted loop id="myVideo">
-      <source src="assets/vids/bgvidreduced.mp4" type="video/mp4" />
-    </video>
+    <div id="bg-backdrop"></div>
     <header></header>
     <main class="container">
       <section id="movie-hero" class="glass-card main-card">
@@ -22,17 +20,6 @@
           <img
             id="movie-poster"
             src=""
-            alt="Poster do Filme"
-            class="biolume-border"
-          />
-        </div>
-
-        <div class="poster-expanded">
-          <button id="close-expanded" class="btn-glow">X</button>
-          <button id="download-poster" class="btn-glow">Baixar Poster</button>
-          <img
-            id="movie-poster-expanded"
-            src="assets/img/poster.avif"
             alt="Poster do Filme"
             class="biolume-border"
           />
@@ -68,10 +55,22 @@
         </div>
       </section>
 
+      <div id="poster-expanded">
+          <button id="close-expanded" class="btn-glow">X</button>
+          <button id="download-poster" class="btn-glow">Baixar Poster</button>
+          <img
+            id="movie-poster-expanded"
+            src="assets/img/poster.avif"
+            alt="Poster do Filme"
+            class="biolume-border"
+          />
+        </div>
+
       <section id="casting" class="glass-card">
 
       </section>
     </main>
     <script type="module" src="/js/tmdb/api.js"></script>
+    <script type="module" src="/js/index.js"></script>
   </body>
 </html>

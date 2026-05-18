@@ -1,3 +1,18 @@
+#bg-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.3) blur(4px); 
+    transition: background-image 1s ease-in-out; 
+    background-color: #020b16;
+}
+
 .main-card {
     display: flex;
     gap: 40px;
@@ -51,9 +66,9 @@
     transform: scale(1.02);
 }
 
-.poster-expanded{
-    width: 80vw;
-    height: 90vh;
+#poster-expanded{
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 50%;
@@ -69,11 +84,11 @@
     display: none;
 }
 
-.poster-expanded:hover{
+#poster-expanded:hover{
     box-shadow: 0 0 30px var(--pandora-cyan);
 }
 
-.poster-expanded #close-expanded{
+#poster-expanded #close-expanded{
     position: absolute;
     top: 10px;
     right: 10px;
@@ -96,7 +111,7 @@
     transition: 0.2s;
 }
 
-.poster-expanded #download-poster{
+#poster-expanded #download-poster{
     position: absolute;
     top: 10px;
     left: 10px;
@@ -117,9 +132,9 @@
     transition: 0.2s;
 }
 
-.poster-expanded #movie-poster-expanded{
-    width: 30%;
-    height: 80%;
+#poster-expanded #movie-poster-expanded{
+    width: 90vw;
+    height: 80vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -128,10 +143,10 @@
     border-radius: 3%;
 }
 
-.poster-expanded #movie-poster-expanded:hover{
+#poster-expanded #movie-poster-expanded:hover{
     border: none;
     box-shadow: none;
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.02);
 }
 
 .movie-info h1 {
@@ -181,23 +196,6 @@
     color: var(--pandora-cyan);
 }
 
-.crew-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.crew-item b {
-    display: block;
-    color: var(--text-light);
-}
-
-.crew-item span {
-    font-size: 0.85rem;
-    color: #b0d4db;
-}
-
 #casting{
     display: flex;
     overflow-x: auto;
@@ -243,5 +241,4 @@
         text-align: center;
     }
     .metadata { justify-content: center; flex-wrap: wrap; }
-    .crew-grid { grid-template-columns: 1fr 1fr; }
 }
